@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css"></style>
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+    var arr1 = [3, 4, 5, 3, 5, "3", "5", 6, 7, 6, 8, 7, 6];
+    function unique1(arr) {
+        var n = []; //一个新的临时数组
+        var l = arr.length;//数组长度
+        for (var i = 0; i < l; i++) //遍历当前数组
+        {
+            //如果当前数组的第i已经保存进了临时数组，那么跳过，
+            //否则把当前项push到临时数组里面
+            if (n.indexOf(arr[i]) == -1) {
+                n.push(arr[i]);
+            }
+        }
+        return n;
+    }
+    unique1(arr1);//[3, 4, 5, "3", "5", 6, 7, 8]
+
+    function unique2(arr) {
+        var h = {}, n = []; //h为hash表，n为临时数组
+        var l = arr.length;
+        for (var i = 0; i < l; i++) //遍历当前数组
+        {
+            if (!h[arr[i]]) //如果hash表中没有当前项
+            {
+                h[arr[i]] = true; //存入hash表
+                n.push(arr[i]); //把当前数组的当前项push到临时数组里面
+            }
+        }
+        return n;
+    }
+    unique2(arr1);//[3, 4, 5, 6, 7, 8]
+
+    function unique3(arr) {
+        var n = [arr[0]]; //结果数组
+        var l=arr.length;
+        for (var i = 1; i < l; i++) //从第二项开始遍历
+        {
+            //如果当前数组的第i项在当前数组中第一次出现的位置不是i，
+            //那么表示第i项是重复的，忽略掉。否则存入结果数组
+            if (arr.indexOf(arr[i]) == i){
+                n.push(arr[i]);
+            }
+        }
+        return n;
+    }
+    unique3(arr1);//[3, 4, 5, "3", "5", 6, 7, 8]
+
+     function unique4(arr) {
+        arr.sort();
+        var re=[arr[0]],l=arr.length;
+        for(var i = 1; i < l; i++)
+        {
+            if( arr[i] !== re[re.length-1])
+            {
+                re.push(arr[i]);
+            }
+        }
+        return re;
+    }
+</script>
+</body>
+</html>

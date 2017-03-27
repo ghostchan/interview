@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*//    1、请选择下面代码片段输出的结果
+     var str='abc123';
+     var num=parseInt(str);
+     if(num==NaN){
+     alert("NaN");
+     }else if(num==123){
+     alert("123");
+     }else if(typeof num == 'number'){
+     alert('number');
+     }else{
+     alert('str');
+     }
+     //会弹出number*/
+
+    //2、求a的值
+    /*var a = 'abc' + 123 +456;
+     console.log(a);//abc123456*/
+
+    /*var a='456'-'123';
+     console.log(a);// 333*/
+
+    /*var a=1;
+     var b='2';
+     var c=a>b?(a<b?a:b):(a==b?a:8);
+     console.log(c);//8*/
+
+    /* var a=5&3;
+     var b=5|3;
+     0101
+     0011
+     console.log(a);//1
+     console.log(b);//7*/
+
+    //   3、分别写出下面两个循环语句alert输出的结果，并说明原理
+    /*for(var i=0;i<10;i++){
+     alert(i);
+     break;
+     }
+     alert(i);
+     //先后弹出两次0*/
+
+    /*for(var i=0;i<10;i++){
+     continue;
+     alert(i);
+     }
+     alert(i);
+     //弹出10*/
+
+/*    //    4、分别写出对fun两次调用alert的输出结果、并说明原理
+    function fun(a, b, c) {
+        var l = arguments.length;
+        var num = 0;
+        for (var i = 0; i < l; i++) {
+            num += arguments[i];
+        }
+        alert(num);
+    }
+    fun(1, 2, 3);//6
+    fun(1, 2, 3, 4);//10*/
+//5、写出函数fun执行后alert的输出结果，并说明原理
+    var a=0;
+    function fun(){
+        alert(a);
+        var a=10;
+    }
+    fun();
+    alert(a);
+</script>
+</body>
+</html>

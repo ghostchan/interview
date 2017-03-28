@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+</head>
+<body>
+<script type="text/javascript">
+    //快速排序
+    /*  function selectionSort(ary) {
+     var length = ary.length;
+     var indexMin;
+     for (var i = 0; i < length - 1; i++) {
+     indexMin = i;
+     for (var j = i+1; j < length; j++) {
+     if (ary[indexMin] > ary[j]) {
+     indexMin = j;
+     }
+     }
+     if (i !== indexMin) {
+     var temp;
+     temp = ary[i];
+     ary[i] = ary[indexMin];
+     ary[indexMin] = temp;
+     }
+     console.log(ary);
+     }
+     return ary;
+     }
+     var ary=[5,8,9,3,0];
+     console.log(selectionSort(ary));*/
+
+    //插入排序
+    function insertionSort(ary) {
+        var length = ary.length,
+                j, temp;
+        for (var i = 1; i < length; i++) {
+            j = i;
+            temp = ary[i];
+            while (j > 0 && ary[j - 1] > temp) {
+                ary[j] = ary[j - 1];
+                j--;
+            }
+            ary[j] = temp;
+            console.log(ary);
+        }
+        return ary;
+    }
+    var array=[7,9,6,3,8];
+    insertionSort(array);
+</script>
+</body>
+</html>

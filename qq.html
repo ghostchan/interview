@@ -5,7 +5,15 @@
     <title>Title</title>
 </head>
 <body>
+<div id="btnBox">
+    <input type="button" value="button_1">
+    <input type="button" value="button_2">
+    <input type="button" value="button_3">
+    <input type="button" value="button_4">
+    <input type="button" value="button_5">
+</div>
 <script type="text/javascript">
+
     /*//    1、请选择下面代码片段输出的结果
      var str='abc123';
      var num=parseInt(str);
@@ -54,25 +62,100 @@
      alert(i);
      //弹出10*/
 
-/*    //    4、分别写出对fun两次调用alert的输出结果、并说明原理
-    function fun(a, b, c) {
-        var l = arguments.length;
-        var num = 0;
-        for (var i = 0; i < l; i++) {
-            num += arguments[i];
-        }
-        alert(num);
-    }
-    fun(1, 2, 3);//6
-    fun(1, 2, 3, 4);//10*/
-//5、写出函数fun执行后alert的输出结果，并说明原理
-    var a=0;
-    function fun(){
-        alert(a);
-        var a=10;
-    }
-    fun();
-    alert(a);
+    /*    //    4、分别写出对fun两次调用alert的输出结果、并说明原理
+     function fun(a, b, c) {
+     var l = arguments.length;
+     var num = 0;
+     for (var i = 0; i < l; i++) {
+     num += arguments[i];
+     }
+     alert(num);
+     }
+     fun(1, 2, 3);//6
+     fun(1, 2, 3, 4);//10*/
+
+    /*//5、写出函数fun执行后alert的输出结果，并说明原理
+     var a=0;
+     function fun(){
+     alert(a);
+     var a=10;
+     }
+     fun();//undefined
+     alert(a);//0
+     */
+
+    //    6、分别写出下面两段代码alert输出的结果，并说明原理
+    /*
+     var a=0;
+     var b=a;
+     b++;
+     alert(a);
+     */
+    /*  var o={};
+     o.a=0;
+     var b=o;
+     b.a=10;
+     alert(o.a);//10
+     */
+
+    //    8、分别写出my_fun.b()和my_fun.c()执行时alert输出的结果
+    /*    function Fun() {
+     this.a = 0;
+     this.b = function () {
+     alert(this.a);
+     }
+     }
+     Fun.prototype = {
+     b: function () {
+     this.a = 20;
+     alert(this.a);
+     },
+     c: function () {
+     this.a = 30;
+     alert(this.a);
+     }
+     }
+     var my_fun = new Fun();
+     my_fun.b();//0
+     my_fun.c();//30
+     */
+
+    //    9、请问执行下面代码，会有几次alert输出，每次的值各是什么？并说明原理。
+    /*var n = 0;
+     function a() {
+     var n = 10;
+
+     function b() {
+     n++;
+     alert(n);
+     }
+
+     b();
+     return b;
+     }
+     var c = a();//11
+     c();//12
+     alert(n);//0
+     */
+
+    //    10、
+   /* var oBox = document.getElementById("btnBox");
+    var oInputs = oBox.getElementsByTagName("input");
+    var l = oInputs.length;
+
+    for (var i = 0; i < l; i++) {
+        (function(i){
+            oInputs[i].onclick = function () {
+                alert(i);
+            }
+        })(i);
+        console.log(i);
+
+    }*/
+
+//    12、
+    var oBox=document.getElementById("btnBox");
+    oBox.style.display="none";
 </script>
 </body>
 </html>

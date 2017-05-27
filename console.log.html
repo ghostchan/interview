@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //console.log 加时间错戳
+    var oldlog = console.log;
+    console.log = function(...values){
+        oldlog(new Date().getTime() +"  " + values.join(" "));
+    }
+    console.log(7,9,8);
+    console.log(0,4,7,5);
+    console.log(55,4,7,5);
+</script>
+</body>
+</html>

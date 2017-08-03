@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box1{float: left;width: 200px;height: 150px;background: red;}
+        .box2{margin-left: 200px;background: blue;height: 150px;}
+    </style>
+</head>
+<body>
+<!--左侧固定两百 右侧自适应 这种布局怎么写?多种方式。用flexbox怎么写? -->
+<!--方法一：左侧元素浮动或者绝对定位的方式脱离文档流，让两个块级元素能够在同一行显示。
+然后margin-left的值设置为左侧元素的宽度；在这里利用了div的一个默认规则，div没有设置宽度的情况下会继承父元素的宽度；如果用p等其他标签达不到此效果；-->
+<div class="box1"></div>
+<div class="box2"></div>
+</body>
+</html>

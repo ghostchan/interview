@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+</head>
+<style type="text/css">
+    .box{display: table;width: 100%;}
+    .box1{width: 300px;height: 150px;background: red;display: table-cell;}
+    .box2{background: green;height: 150px;display: table-cell;}
+</style>
+<body>
+<!--利用display:table;的方式实现；父元素设置display:table;宽度100%，左右盒子设置display:table-cell;，左侧固定的盒子设置宽高，右侧自适应的盒子设置高度即可；-->
+<div class="box">
+    <div class="box1"></div>
+    <div class="box2"></div>
+</div>
+</body>
+</html>

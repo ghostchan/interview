@@ -7,24 +7,29 @@ CSS引入的方式有哪些? link和@import的区别是?
 
 示例：
 
-<div style="background: red"></div>
-这通常是个很糟糕的书写方式，它只能改变当前标签的样式，如果想要多个 <div> 拥有相同的样式，你不得不重复地为每个 <div> 添加相同的样式，如果想要修改一种样式，又不得不修改所有的 style 中的代码。很显然，内联方式引入 CSS 代码会导致 HTML 代码变得冗长，且使得网页难以维护。
+
+    <div style="background: red"></div>
+
+
+
+这通常是个很糟糕的书写方式，它只能改变当前标签的样式，
+如果想要多个 <div> 拥有相同的样式，你不得不重复地为每个`<div>`  添加相同的样式，
+如果想要修改一种样式，又不得不修改所有的 style 中的代码。
+很显然，内联方式引入 CSS 代码会导致 HTML 代码变得冗长，且使得网页难以维护。
 
 2.嵌入方式
 
-嵌入方式指的是在 HTML 头部中的 <style> 标签下书写 CSS 代码。
+嵌入方式指的是在 HTML 头部中的 `<style>` 标签下书写 CSS 代码。
 
 示例：
 
-<head>
-    <style>
-
-    .content {
-        background: red;
-    }
-
-    </style>
-</head>
+    <head>
+    	<style>
+    		.content {
+   			 background: red;
+    		}
+    	</style>
+    </head>
 嵌入方式的 CSS 只对当前的网页有效。因为 CSS 代码是在 HTML 文件中，所以会使得代码比较集中，当我们写模板网页时这通常比较有利。因为查看模板代码的人可以一目了然地查看 HTML 结构和 CSS 样式。因为嵌入的 CSS 只对当前页面有效，所以当多个页面需要引入相同的 CSS 代码时，这样写会导致代码冗余，也不利于维护。
 
 3.链接方式
@@ -33,9 +38,10 @@ CSS引入的方式有哪些? link和@import的区别是?
 
 示例：
 
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+      <head>
+    	<link rel="stylesheet" type="text/css" href="style.css">
+	  </head>
+
 这是最常见的也是最推荐的引入 CSS 的方式。使用这种方式，所有的 CSS 代码只存在于单独的 CSS 文件中，所以具有良好的可维护性。并且所有的 CSS 代码只存在于 CSS 文件中，CSS 文件会在第一次加载时引入，以后切换页面时只需加载 HTML 文件即可。
 
 
@@ -46,9 +52,10 @@ CSS引入的方式有哪些? link和@import的区别是?
 
 示例：
 
-<style>
-    @import url(style.css);
-</style>
+    <style>
+    	@import url(style.css);
+    </style>
+    
 
 
 两者都是外部引用CSS的方式，但是存在一定的区别：

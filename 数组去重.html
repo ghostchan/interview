@@ -43,12 +43,12 @@
 
     function unique3(arr) {
         var n = [arr[0]]; //结果数组
-        var l=arr.length;
+        var l = arr.length;
         for (var i = 1; i < l; i++) //从第二项开始遍历
         {
             //如果当前数组的第i项在当前数组中第一次出现的位置不是i，
             //那么表示第i项是重复的，忽略掉。否则存入结果数组
-            if (arr.indexOf(arr[i]) == i){
+            if (arr.indexOf(arr[i]) == i) {
                 n.push(arr[i]);
             }
         }
@@ -56,17 +56,30 @@
     }
     unique3(arr1);//[3, 4, 5, "3", "5", 6, 7, 8]
 
-     function unique4(arr) {
+    function unique4(arr) {
         arr.sort();
-        var re=[arr[0]],l=arr.length;
-        for(var i = 1; i < l; i++)
-        {
-            if( arr[i] !== re[re.length-1])
-            {
+        var re = [arr[0]], l = arr.length;
+        for (var i = 1; i < l; i++) {
+            if (arr[i] !== re[re.length - 1]) {
                 re.push(arr[i]);
             }
         }
         return re;
+    }
+
+    Array.prototype.unique4 = function () {
+        var obj = {};
+        for (var i = 0; i < this.length; i++) {
+            var cur = this[i];
+            if (obj[cur] == cur) {
+                this[i] = this[this.length - 1];
+                this.length--;
+                i--;
+                continue;
+            }
+            obj[cur] = cur;
+        }
+        obj = null;
     }
 </script>
 </body>
